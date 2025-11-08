@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+
+google-auth
+google-auth-oauthlib
+google-api-python-client
+gspread
+
+google-cloud-aiplatform
+python-docx
+Pillow

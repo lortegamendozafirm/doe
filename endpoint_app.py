@@ -21,7 +21,7 @@ def healthz():
     return {"ok": True}
 
 @app.post("/run")
-def run(req: RunRequest, x_run_token: Optional[str] = Header(default=None)):
+async def run(req: RunRequest, x_run_token: Optional[str] = Header(default=None)):
     # token opcional (si no seteas RUN_TOKEN, no se valida nada)
     if RUN_TOKEN and (x_run_token or "") != RUN_TOKEN:
         raise HTTPException(status_code=401, detail="Invalid X-Run-Token")
